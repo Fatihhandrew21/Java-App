@@ -8,12 +8,13 @@ pipeline {
             }
         }
 
-        stage('Build') {
-    steps {
-        sh './mvnw clean package -DskipTests'
-    }
-}
-        stage('Test') {
+      stage('Build') {
+         steps {
+             sh 'chmod +x mvnw'
+             sh './mvnw clean package -DskipTests'
+            }
+        }   
+     stage('Test') {
             steps {
                 sh 'echo "No tests implemented"'
             }
