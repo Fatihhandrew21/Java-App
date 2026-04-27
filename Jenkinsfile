@@ -9,11 +9,10 @@ pipeline {
         }
 
         stage('Build') {
-            steps {
-                sh 'mvn clean package -DskipTests'
-            }
-        }
-
+    steps {
+        sh './mvnw clean package -DskipTests'
+    }
+}
         stage('Test') {
             steps {
                 sh 'echo "No tests implemented"'
